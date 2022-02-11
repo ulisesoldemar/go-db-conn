@@ -1,0 +1,29 @@
+{{ define "index" }}
+{{ template "header" }}
+
+
+<a name="" id="" class="btn btn-primary" href="/create" role="button">Agregar empleado</a>
+<br/>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Con range accedemos a los datos enviados desde el servidor -->
+        {{ range. }}
+        <tr>
+            <td> {{ .Id }} </td>
+            <td> {{ .Name }} </td>
+            <td> {{ .Email }} </td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
+{{ template "footer" }}
+
+{{ end }}
